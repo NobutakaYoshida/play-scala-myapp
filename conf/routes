@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+#GET     /                           controllers.HomeController.index()
+#パラメーターにidを指定
+#GET     /:id                           controllers.HomeController.index(id:Int)
+#パラメーターにidとnameを指定
+#GET     /:id+:name                           controllers.HomeController.index(id:Int, name:String)
+#パラメーターにidを指定。nameは任意
+#GET     /:id                           controllers.HomeController.index(id:Int, name:Option[String])
+#クッキーにnameを保存
+GET     /                           controllers.HomeController.index(name:Option[String])
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
